@@ -44,7 +44,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="668" y="-296"/>
+            <point key="canvasLocation" x="466" y="-458"/>
         </scene>
         <!--Master View Controller - Master-->
         <scene sceneID="18">
@@ -93,15 +93,15 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Master" id="36">
-                        <barButtonItem key="leftBarButtonItem" title="Chart" id="OW0-1H-IAq">
+                        <barButtonItem key="leftBarButtonItem" title="Chart" id="Dsp-ep-gTx">
                             <connections>
-                                <segue destination="21l-GT-dDV" kind="push" identifier="showGraph" id="lSd-p3-TZM"/>
+                                <segue destination="21l-GT-dDV" kind="push" id="rpP-Jk-oBQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="278" y="342"/>
+            <point key="canvasLocation" x="21" y="-360"/>
         </scene>
         <!--Detail View Controller - Detail-->
         <scene sceneID="24">
