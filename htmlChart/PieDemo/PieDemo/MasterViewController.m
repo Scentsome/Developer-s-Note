@@ -10,6 +10,8 @@
 
 #import "DetailViewController.h"
 
+#import "GraphViewController.h"
+
 @interface MasterViewController () {
     NSMutableArray *_objects;
     NSArray * categories;
@@ -131,6 +133,14 @@
         [[segue destinationViewController] setDetailItem:object];
     }
     if ([[segue identifier] isEqualToString:@"showGraph"]) {
+        [_objects enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            NSInteger current = [[sums objectForKey:[obj objectForKey:@"cat"]] integerValue];
+            current += [[obj objectForKey:@"amount"] integerValue];
+            [sums setObject:[NSNumber numberWithInteger:current] forKey:[obj objectForKey:@"cat"]];
+        }];
+        NSLog(@"sums %@", sums);
+        GraphViewController * graph = segue.destinationViewController ;
+        graph.sums = sums;
     }
 }
 
