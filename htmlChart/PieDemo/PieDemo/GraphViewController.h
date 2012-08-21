@@ -11,4 +11,5 @@
 @interface GraphViewController : UIViewController<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *myWebView;
 @property (strong) NSMutableArray * records;
+@property (strong) NSMutableDictionary * sums;
 @end

@@ -15,6 +15,7 @@
 @implementation GraphViewController
 @synthesize myWebView;
 @synthesize records;
+@synthesize sums;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
