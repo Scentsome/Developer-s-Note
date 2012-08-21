@@ -44,7 +44,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="394" y="-76"/>
+            <point key="canvasLocation" x="668" y="-296"/>
         </scene>
         <!--Master View Controller - Master-->
         <scene sceneID="18">
@@ -70,7 +70,7 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="category" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="dAH-SU-Ehm">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="11" contentMode="left" text="category" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="dAH-SU-Ehm">
                                             <rect key="frame" x="223" y="11" width="67" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -95,13 +95,13 @@
                     <navigationItem key="navigationItem" title="Master" id="36">
                         <barButtonItem key="leftBarButtonItem" title="Chart" id="OW0-1H-IAq">
                             <connections>
-                                <segue destination="21l-GT-dDV" kind="push" id="lSd-p3-TZM"/>
+                                <segue destination="21l-GT-dDV" kind="push" identifier="showGraph" id="lSd-p3-TZM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="252" y="168"/>
+            <point key="canvasLocation" x="278" y="342"/>
         </scene>
         <!--Detail View Controller - Detail-->
         <scene sceneID="24">
