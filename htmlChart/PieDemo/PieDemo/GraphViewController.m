@@ -58,6 +58,7 @@
  
     NSString * jsonArray = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:catArray options:NSJSONWritingPrettyPrinted error:NULL] encoding:NSUTF8StringEncoding];
     NSString * jsonValue = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:valueArray options:NSJSONWritingPrettyPrinted error:NULL] encoding:NSUTF8StringEncoding];
+    
     NSLog(@"json Array %@", jsonArray);
     NSLog(@"value array %@", jsonValue);
     [myWebView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"gotData(%@,%@); drawPie();",jsonArray ,jsonValue]];
