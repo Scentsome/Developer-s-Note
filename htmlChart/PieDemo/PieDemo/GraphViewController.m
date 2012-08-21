@@ -14,7 +14,6 @@
 
 @implementation GraphViewController
 @synthesize myWebView;
-@synthesize records;
 @synthesize sums;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,6 +30,7 @@
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(testJS)];
     self.navigationItem.rightBarButtonItem = addButton;
+    
     NSString * fileURL = [[NSBundle mainBundle] pathForResource:@"graph" ofType:@"html" inDirectory:@"jqplot"];
     NSURL * url = [NSURL URLWithString:[fileURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest * urlRequest = [NSURLRequest requestWithURL:url];
