@@ -8,38 +8,82 @@
 		<script type="text/javascript" src="./plugins/jqplot.pieRenderer.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="jquery.jqplot.min.css" />
 		<script type="text/javascript">
+            var catArray = "";
+            var valueArray ="";
+            var pieData = [];
+            function gotData(data1,data2){
+                catArray = data1;
+                valueArray = data2;
+//                alert("Recieved "+data1+" and "+data2);
+            }
+            function drawPie(){
+                for(var index in catArray){
+                    pieData.push([catArray[index],valueArray[index]]); 
+                }
+                var plot8 = $.jqplot('pie8', [pieData], {
+                                     grid: {
+                                     drawBorder: false,
+                                     drawGridlines: false,
+                                     background: '#ffffff',
+                                     shadow:false
+                                     },
+                                     axesDefaults: {
+                                     
+                                     },
+                                     seriesDefaults:{
+                                     renderer:$.jqplot.PieRenderer,
+                                     rendererOptions: {
+                                     showDataLabels: true
+                                     }
+                                     },
+                                     legend: {
+                                     show: true,
+                                     rendererOptions: {
+                                     numberRows: 1
+                                     },
+                                     location: 's'
+                                     }
+                                     });
+            }
+            
 		$(document).ready(function(){
-		    var s1 = [['Sony',7], ['Samsumg',13.3], ['LG',14.7], ['Vizio',5.2], ['Insignia', 1.2]];
-         
-		    var plot8 = $.jqplot('pie8', [s1], {
-		        grid: {
-		            drawBorder: false,
-		            drawGridlines: false,
-		            background: '#ffffff',
-		            shadow:false
-		        },
-		        axesDefaults: {
-             
-		        },
-		        seriesDefaults:{
-		            renderer:$.jqplot.PieRenderer,
-		            rendererOptions: {
-		                showDataLabels: true
-		            }
-		        },
-		        legend: {
-		            show: true,
-		            rendererOptions: {
-		                numberRows: 1
-		            },
-		            location: 's'
-		        }
-		    });
+          $("input").click(function(){
+                           var s1 = [['Sony',7], ['Samsumg',13.3], ['LG',14.7], ['Vizio',5.2], ['Insignia', 1.2]];
+                           
+                           
+                           var plot8 = $.jqplot('pie8', [s1], {
+                                                grid: {
+                                                drawBorder: false,
+                                                drawGridlines: false,
+                                                background: '#ffffff',
+                                                shadow:false
+                                                },
+                                                axesDefaults: {
+                                                
+                                                },
+                                                seriesDefaults:{
+                                                renderer:$.jqplot.PieRenderer,
+                                                rendererOptions: {
+                                                showDataLabels: true
+                                                }
+                                                },
+                                                legend: {
+                                                show: true,
+                                                rendererOptions: {
+                                                numberRows: 1
+                                                },
+                                                location: 's'
+                                                }
+                                                });
+          });
+		   
 		});
+           
 		</script>
 	</head>
 	<body>
 		<div id="pie8" class="jqplot-target" style="height:400px;width:300px;">
 		</div>
+        <!--input type="button" value="test" -->
 	</body>
 </html>
