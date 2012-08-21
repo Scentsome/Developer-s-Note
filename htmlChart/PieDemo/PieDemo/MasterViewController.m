@@ -12,6 +12,8 @@
 
 @interface MasterViewController () {
     NSMutableArray *_objects;
+    NSArray * categories;
+    NSMutableDictionary * sums;
 }
 @end
 
@@ -26,6 +28,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    categories = [NSArray arrayWithObjects:@"食",@"衣",@"住",@"行",@"娛", nil];
+    sums = [NSMutableDictionary dictionaryWithCapacity:[categories count]];
+    [categories enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [sums setObject:[NSNumber numberWithInteger:0] forKey:obj];
+    }];
 	// Do any additional setup after loading the view, typically from a nib.
 //    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
@@ -49,7 +56,12 @@
     if (!_objects) {
         _objects = [[NSMutableArray alloc] init];
     }
-    [_objects insertObject:[NSDate date] atIndex:0];
+    NSNumber * num = [NSNumber numberWithInteger:arc4random()%2000];
+    NSString * cat = [categories objectAtIndex:arc4random()%5];
+    
+    NSDictionary * content = [NSDictionary dictionaryWithObjectsAndKeys:num, @"amount",cat ,@"cat", nil];
+    
+    [_objects insertObject:content atIndex:0];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
@@ -69,9 +81,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-
-    NSDate *object = [_objects objectAtIndex:indexPath.row];
-    cell.textLabel.text = [object description];
+    UILabel * amount = (UILabel *) [cell viewWithTag:10];
+    UILabel * cat = (UILabel *)[cell viewWithTag:11];
+    NSDictionary * object = [_objects objectAtIndex:indexPath.row];
+    amount.text = [NSString stringWithFormat:@"%d", [[object objectForKey:@"amount"] integerValue]];
+    cat.text = [object objectForKey:@"cat"];
+//    NSDate *object = [_objects objectAtIndex:indexPath.row];
+//    cell.textLabel.text = [object description];
     return cell;
 }
 
@@ -113,6 +129,8 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSDate *object = [_objects objectAtIndex:indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
+    }
+    if ([[segue identifier] isEqualToString:@"showGraph"]) {
     }
 }
 
