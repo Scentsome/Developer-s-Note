@@ -21,20 +21,30 @@
             </objects>
             <point key="canvasLocation" x="-1" y="64"/>
         </scene>
-        <!--View Controller-->
+        <!--Graph View Controller-->
         <scene sceneID="C86-hx-F6U">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ucb-yJ-8X0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="21l-GT-dDV" sceneMemberID="viewController">
+                <viewController id="21l-GT-dDV" customClass="GraphViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="21O-eS-7qX">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" id="ufE-GD-4h0">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="FfD-gD-a8M"/>
+                    <connections>
+                        <outlet property="myWebView" destination="ufE-GD-4h0" id="UN3-6z-8qa"/>
+                    </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="696" y="-51"/>
+            <point key="canvasLocation" x="394" y="-76"/>
         </scene>
         <!--Master View Controller - Master-->
         <scene sceneID="18">
@@ -120,6 +130,12 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="GraphViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GraphViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="myWebView" candidateClass="UIWebView"/>
             </relationships>
         </class>
         <class className="MasterViewController" superclassName="UITableViewController">
