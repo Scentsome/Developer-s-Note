@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ZipArchive.h"
 
 #define SERVER @"http://127.0.0.1:8800/data"
 @interface ViewController (){
@@ -32,12 +33,18 @@
 -(void) connectionDidFinishLoading:(NSURLConnection *)connection{
     NSString * filePath = [[self fakeDoc] stringByAppendingFormat:@"/%@", fileName];
     [[NSFileManager defaultManager] createFileAtPath:filePath contents:self.tmpData attributes:nil];
-    
+    [self unzipFile:filePath];
 }
 -(NSString *) fakeDoc{
     return @"/Users/chronoer/developer";
 }
 
+-(void) unzipFile:(NSString * ) zipFilePath{
+    ZipArchive *zipArchive = [[ZipArchive alloc] init];
+    [zipArchive UnzipOpenFile:zipFilePath ];
+    [zipArchive UnzipFileTo:[self fakeDoc] overWrite:YES];
+    [zipArchive UnzipCloseFile];
+}
 
 - (void)viewDidLoad
 {
