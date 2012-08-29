@@ -19,7 +19,7 @@
 		E468A65015EE05EE004525A8 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = E468A64915EE05EE004525A8 /* mztools.c */; };
 		E468A65115EE05EE004525A8 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = E468A64B15EE05EE004525A8 /* unzip.c */; };
 		E468A65215EE05EE004525A8 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = E468A64D15EE05EE004525A8 /* zip.c */; };
-		E468A65515EE05FB004525A8 /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = E468A65415EE05FB004525A8 /* ZipArchive.mm */; };
+		E468A65515EE05FB004525A8 /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = E468A65415EE05FB004525A8 /* ZipArchive.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E468A65715EE0746004525A8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E468A65615EE0746004525A8 /* libz.dylib */; };
 /* End PBXBuildFile section */
 
