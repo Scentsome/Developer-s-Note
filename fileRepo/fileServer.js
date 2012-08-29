@@ -5,7 +5,7 @@ app.configure(function() {
 	    app.use(express.bodyParser({uploadDir: './'}));
 });
 app.listen(8800);
-
+var fs=require('fs');
 app.get('/data', function(req,res) {
 	if (req.query.fileName) {
 		
