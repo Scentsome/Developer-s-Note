@@ -15,6 +15,11 @@
 		E468A63515EDFC78004525A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E468A63415EDFC78004525A8 /* AppDelegate.m */; };
 		E468A63815EDFC78004525A8 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E468A63615EDFC78004525A8 /* MainStoryboard.storyboard */; };
 		E468A63B15EDFC78004525A8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E468A63A15EDFC78004525A8 /* ViewController.m */; };
+		E468A64F15EE05EE004525A8 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = E468A64715EE05EE004525A8 /* ioapi.c */; };
+		E468A65015EE05EE004525A8 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = E468A64915EE05EE004525A8 /* mztools.c */; };
+		E468A65115EE05EE004525A8 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = E468A64B15EE05EE004525A8 /* unzip.c */; };
+		E468A65215EE05EE004525A8 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = E468A64D15EE05EE004525A8 /* zip.c */; };
+		E468A65515EE05FB004525A8 /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = E468A65415EE05FB004525A8 /* ZipArchive.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +36,17 @@
 		E468A63715EDFC78004525A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		E468A63915EDFC78004525A8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E468A63A15EDFC78004525A8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E468A64615EE05EE004525A8 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		E468A64715EE05EE004525A8 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		E468A64815EE05EE004525A8 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		E468A64915EE05EE004525A8 /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
+		E468A64A15EE05EE004525A8 /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
+		E468A64B15EE05EE004525A8 /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		E468A64C15EE05EE004525A8 /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		E468A64D15EE05EE004525A8 /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
+		E468A64E15EE05EE004525A8 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		E468A65315EE05FB004525A8 /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
+		E468A65415EE05FB004525A8 /* ZipArchive.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZipArchive.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +93,9 @@
 		E468A62A15EDFC78004525A8 /* UnzipDemo */ = {
 			isa = PBXGroup;
 			children = (
+				E468A65315EE05FB004525A8 /* ZipArchive.h */,
+				E468A65415EE05FB004525A8 /* ZipArchive.mm */,
+				E468A64515EE05EE004525A8 /* minizip */,
 				E468A63315EDFC78004525A8 /* AppDelegate.h */,
 				E468A63415EDFC78004525A8 /* AppDelegate.m */,
 				E468A63615EDFC78004525A8 /* MainStoryboard.storyboard */,
@@ -96,6 +115,22 @@
 				E468A63215EDFC78004525A8 /* UnzipDemo-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E468A64515EE05EE004525A8 /* minizip */ = {
+			isa = PBXGroup;
+			children = (
+				E468A64615EE05EE004525A8 /* crypt.h */,
+				E468A64715EE05EE004525A8 /* ioapi.c */,
+				E468A64815EE05EE004525A8 /* ioapi.h */,
+				E468A64915EE05EE004525A8 /* mztools.c */,
+				E468A64A15EE05EE004525A8 /* mztools.h */,
+				E468A64B15EE05EE004525A8 /* unzip.c */,
+				E468A64C15EE05EE004525A8 /* unzip.h */,
+				E468A64D15EE05EE004525A8 /* zip.c */,
+				E468A64E15EE05EE004525A8 /* zip.h */,
+			);
+			path = minizip;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +199,11 @@
 				E468A63115EDFC78004525A8 /* main.m in Sources */,
 				E468A63515EDFC78004525A8 /* AppDelegate.m in Sources */,
 				E468A63B15EDFC78004525A8 /* ViewController.m in Sources */,
+				E468A64F15EE05EE004525A8 /* ioapi.c in Sources */,
+				E468A65015EE05EE004525A8 /* mztools.c in Sources */,
+				E468A65115EE05EE004525A8 /* unzip.c in Sources */,
+				E468A65215EE05EE004525A8 /* zip.c in Sources */,
+				E468A65515EE05FB004525A8 /* ZipArchive.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
