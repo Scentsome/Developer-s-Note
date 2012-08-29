@@ -12,10 +12,21 @@ app.get('/data', function(req,res) {
 		var filename = req.query.fileName;
 	    console.log(filename);
     
-	    var mimeType = "image/png";
-	    res.writeHead(200, mimeType);
+//	    var mimeType = "image/png";
+//	    res.writeHead(200, mimeType);
+		
+		
+		fs.stat(filename, function(error, stat) {
+		  if (error) { throw error; }
+		  res.writeHead(200, {
+		    'Content-Type' : 'image/png',
+		    'Content-Length' : stat.size
+		  });
+		  // do your piping here
+		}); 
 
 	    var fileStream = fs.createReadStream(filename);
+
 	    fileStream.on('data', function (data) {
 	        res.write(data);
 	    });
