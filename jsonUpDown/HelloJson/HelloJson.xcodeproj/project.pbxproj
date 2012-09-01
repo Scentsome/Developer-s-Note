@@ -1,0 +1,283 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E4610CD915F27A07000D0CF9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4610CD815F27A07000D0CF9 /* UIKit.framework */; };
+		E4610CDB15F27A07000D0CF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4610CDA15F27A07000D0CF9 /* Foundation.framework */; };
+		E4610CDD15F27A07000D0CF9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4610CDC15F27A07000D0CF9 /* CoreGraphics.framework */; };
+		E4610CE315F27A07000D0CF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4610CE115F27A07000D0CF9 /* InfoPlist.strings */; };
+		E4610CE515F27A07000D0CF9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4610CE415F27A07000D0CF9 /* main.m */; };
+		E4610CE915F27A07000D0CF9 /* GLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4610CE815F27A07000D0CF9 /* GLAppDelegate.m */; };
+		E4610CEC15F27A07000D0CF9 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4610CEA15F27A07000D0CF9 /* MainStoryboard.storyboard */; };
+		E4610CEF15F27A07000D0CF9 /* GLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4610CEE15F27A07000D0CF9 /* GLViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E4610CD415F27A07000D0CF9 /* HelloJson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloJson.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4610CD815F27A07000D0CF9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E4610CDA15F27A07000D0CF9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E4610CDC15F27A07000D0CF9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E4610CE015F27A07000D0CF9 /* HelloJson-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HelloJson-Info.plist"; sourceTree = "<group>"; };
+		E4610CE215F27A07000D0CF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E4610CE415F27A07000D0CF9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E4610CE615F27A07000D0CF9 /* HelloJson-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HelloJson-Prefix.pch"; sourceTree = "<group>"; };
+		E4610CE715F27A07000D0CF9 /* GLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLAppDelegate.h; sourceTree = "<group>"; };
+		E4610CE815F27A07000D0CF9 /* GLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLAppDelegate.m; sourceTree = "<group>"; };
+		E4610CEB15F27A07000D0CF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		E4610CED15F27A07000D0CF9 /* GLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLViewController.h; sourceTree = "<group>"; };
+		E4610CEE15F27A07000D0CF9 /* GLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E4610CD115F27A07000D0CF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4610CD915F27A07000D0CF9 /* UIKit.framework in Frameworks */,
+				E4610CDB15F27A07000D0CF9 /* Foundation.framework in Frameworks */,
+				E4610CDD15F27A07000D0CF9 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E4610CC915F27A07000D0CF9 = {
+			isa = PBXGroup;
+			children = (
+				E4610CDE15F27A07000D0CF9 /* HelloJson */,
+				E4610CD715F27A07000D0CF9 /* Frameworks */,
+				E4610CD515F27A07000D0CF9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E4610CD515F27A07000D0CF9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E4610CD415F27A07000D0CF9 /* HelloJson.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E4610CD715F27A07000D0CF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4610CD815F27A07000D0CF9 /* UIKit.framework */,
+				E4610CDA15F27A07000D0CF9 /* Foundation.framework */,
+				E4610CDC15F27A07000D0CF9 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E4610CDE15F27A07000D0CF9 /* HelloJson */ = {
+			isa = PBXGroup;
+			children = (
+				E4610CE715F27A07000D0CF9 /* GLAppDelegate.h */,
+				E4610CE815F27A07000D0CF9 /* GLAppDelegate.m */,
+				E4610CEA15F27A07000D0CF9 /* MainStoryboard.storyboard */,
+				E4610CED15F27A07000D0CF9 /* GLViewController.h */,
+				E4610CEE15F27A07000D0CF9 /* GLViewController.m */,
+				E4610CDF15F27A07000D0CF9 /* Supporting Files */,
+			);
+			path = HelloJson;
+			sourceTree = "<group>";
+		};
+		E4610CDF15F27A07000D0CF9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E4610CE015F27A07000D0CF9 /* HelloJson-Info.plist */,
+				E4610CE115F27A07000D0CF9 /* InfoPlist.strings */,
+				E4610CE415F27A07000D0CF9 /* main.m */,
+				E4610CE615F27A07000D0CF9 /* HelloJson-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E4610CD315F27A07000D0CF9 /* HelloJson */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4610CF215F27A07000D0CF9 /* Build configuration list for PBXNativeTarget "HelloJson" */;
+			buildPhases = (
+				E4610CD015F27A07000D0CF9 /* Sources */,
+				E4610CD115F27A07000D0CF9 /* Frameworks */,
+				E4610CD215F27A07000D0CF9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HelloJson;
+			productName = HelloJson;
+			productReference = E4610CD415F27A07000D0CF9 /* HelloJson.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E4610CCB15F27A07000D0CF9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = GL;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = GLuck;
+			};
+			buildConfigurationList = E4610CCE15F27A07000D0CF9 /* Build configuration list for PBXProject "HelloJson" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E4610CC915F27A07000D0CF9;
+			productRefGroup = E4610CD515F27A07000D0CF9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E4610CD315F27A07000D0CF9 /* HelloJson */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E4610CD215F27A07000D0CF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4610CE315F27A07000D0CF9 /* InfoPlist.strings in Resources */,
+				E4610CEC15F27A07000D0CF9 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E4610CD015F27A07000D0CF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4610CE515F27A07000D0CF9 /* main.m in Sources */,
+				E4610CE915F27A07000D0CF9 /* GLAppDelegate.m in Sources */,
+				E4610CEF15F27A07000D0CF9 /* GLViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E4610CE115F27A07000D0CF9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4610CE215F27A07000D0CF9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E4610CEA15F27A07000D0CF9 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4610CEB15F27A07000D0CF9 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E4610CF015F27A07000D0CF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E4610CF115F27A07000D0CF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E4610CF315F27A07000D0CF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HelloJson/HelloJson-Prefix.pch";
+				INFOPLIST_FILE = "HelloJson/HelloJson-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E4610CF415F27A07000D0CF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HelloJson/HelloJson-Prefix.pch";
+				INFOPLIST_FILE = "HelloJson/HelloJson-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E4610CCE15F27A07000D0CF9 /* Build configuration list for PBXProject "HelloJson" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4610CF015F27A07000D0CF9 /* Debug */,
+				E4610CF115F27A07000D0CF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4610CF215F27A07000D0CF9 /* Build configuration list for PBXNativeTarget "HelloJson" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4610CF315F27A07000D0CF9 /* Debug */,
+				E4610CF415F27A07000D0CF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E4610CCB15F27A07000D0CF9 /* Project object */;
+}
