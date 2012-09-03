@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GLViewController : UIViewController
+@interface GLViewController : UIViewController<NSURLConnectionDataDelegate>
 
 @end
