@@ -8,7 +8,8 @@
 
 #import "GLViewController.h"
 #define Server @"http://127.0.0.1:8800/json"
-#define Remote @"http://scentsome.course.jit.su/json"
+#define JITSU @"http://scentsome.course.jit.su/json"
+#define APPFOG @"http://course.rs.af.cm/json"
 @interface GLViewController (){
     NSURLConnection * getConnection;
     NSURLConnection * sendConnection;
@@ -42,7 +43,7 @@
 }
 - (IBAction)sendJson:(id)sender {
     self.upData = [NSMutableData data];
-    NSURL * jsonURL = [NSURL URLWithString:Remote];
+    NSURL * jsonURL = [NSURL URLWithString:APPFOG];
     NSMutableURLRequest * mRequest = [NSMutableURLRequest requestWithURL:jsonURL];
     mRequest.HTTPMethod = @"POST";
     [mRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
@@ -55,7 +56,7 @@
 }
 - (IBAction)getJson:(id)sender {
     self.downData = [NSMutableData  data];
-    NSURL  * jsonURL = [NSURL URLWithString:[Remote stringByAppendingFormat:@"?data=%@",@"hello"]];
+    NSURL  * jsonURL = [NSURL URLWithString:[APPFOG stringByAppendingFormat:@"?data=%@",@"hello"]];
     NSURLRequest * request = [NSURLRequest requestWithURL:jsonURL];
     getConnection = [NSURLConnection connectionWithRequest:request delegate:self];
 }
