@@ -20,6 +20,9 @@
 		E452D4CD15FF57F20044D7BC /* NSData+SRB64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = E452D4CA15FF57F20044D7BC /* NSData+SRB64Additions.m */; };
 		E452D4D215FF57FB0044D7BC /* SocketIO.m in Sources */ = {isa = PBXBuildFile; fileRef = E452D4CF15FF57FB0044D7BC /* SocketIO.m */; };
 		E452D4D315FF57FB0044D7BC /* SocketIOJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = E452D4D115FF57FB0044D7BC /* SocketIOJSONSerialization.m */; };
+		E452D4D515FF807A0044D7BC /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E452D4D415FF807A0044D7BC /* libicucore.dylib */; };
+		E452D4D715FF80800044D7BC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E452D4D615FF80800044D7BC /* CFNetwork.framework */; };
+		E452D4D915FF80880044D7BC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E452D4D815FF80880044D7BC /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,9 @@
 		E452D4CF15FF57FB0044D7BC /* SocketIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIO.m; sourceTree = "<group>"; };
 		E452D4D015FF57FB0044D7BC /* SocketIOJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOJSONSerialization.h; sourceTree = "<group>"; };
 		E452D4D115FF57FB0044D7BC /* SocketIOJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOJSONSerialization.m; sourceTree = "<group>"; };
+		E452D4D415FF807A0044D7BC /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		E452D4D615FF80800044D7BC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		E452D4D815FF80880044D7BC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E452D4D915FF80880044D7BC /* Security.framework in Frameworks */,
+				E452D4D715FF80800044D7BC /* CFNetwork.framework in Frameworks */,
+				E452D4D515FF807A0044D7BC /* libicucore.dylib in Frameworks */,
 				E452D49E15FF55D90044D7BC /* UIKit.framework in Frameworks */,
 				E452D4A015FF55D90044D7BC /* Foundation.framework in Frameworks */,
 				E452D4A215FF55D90044D7BC /* CoreGraphics.framework in Frameworks */,
@@ -66,6 +75,9 @@
 		E452D48E15FF55D70044D7BC = {
 			isa = PBXGroup;
 			children = (
+				E452D4D815FF80880044D7BC /* Security.framework */,
+				E452D4D615FF80800044D7BC /* CFNetwork.framework */,
+				E452D4D415FF807A0044D7BC /* libicucore.dylib */,
 				E452D4A315FF55D90044D7BC /* ChatClient */,
 				E452D49C15FF55D90044D7BC /* Frameworks */,
 				E452D49A15FF55D90044D7BC /* Products */,
