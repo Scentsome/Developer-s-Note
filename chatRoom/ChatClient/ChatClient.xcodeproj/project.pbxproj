@@ -15,6 +15,11 @@
 		E452D4AE15FF55D90044D7BC /* CCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E452D4AD15FF55D90044D7BC /* CCAppDelegate.m */; };
 		E452D4B115FF55D90044D7BC /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E452D4AF15FF55D90044D7BC /* MainStoryboard.storyboard */; };
 		E452D4B415FF55D90044D7BC /* CCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E452D4B315FF55D90044D7BC /* CCViewController.m */; };
+		E452D4CB15FF57F20044D7BC /* base64.c in Sources */ = {isa = PBXBuildFile; fileRef = E452D4C415FF57F20044D7BC /* base64.c */; };
+		E452D4CC15FF57F20044D7BC /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = E452D4C715FF57F20044D7BC /* SRWebSocket.m */; };
+		E452D4CD15FF57F20044D7BC /* NSData+SRB64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = E452D4CA15FF57F20044D7BC /* NSData+SRB64Additions.m */; };
+		E452D4D215FF57FB0044D7BC /* SocketIO.m in Sources */ = {isa = PBXBuildFile; fileRef = E452D4CF15FF57FB0044D7BC /* SocketIO.m */; };
+		E452D4D315FF57FB0044D7BC /* SocketIOJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = E452D4D115FF57FB0044D7BC /* SocketIOJSONSerialization.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +36,17 @@
 		E452D4B015FF55D90044D7BC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		E452D4B215FF55D90044D7BC /* CCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCViewController.h; sourceTree = "<group>"; };
 		E452D4B315FF55D90044D7BC /* CCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCViewController.m; sourceTree = "<group>"; };
+		E452D4C415FF57F20044D7BC /* base64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base64.c; sourceTree = "<group>"; };
+		E452D4C515FF57F20044D7BC /* base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base64.h; sourceTree = "<group>"; };
+		E452D4C615FF57F20044D7BC /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
+		E452D4C715FF57F20044D7BC /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocket.m; sourceTree = "<group>"; };
+		E452D4C815FF57F20044D7BC /* SocketRocket-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SocketRocket-Prefix.pch"; sourceTree = "<group>"; };
+		E452D4C915FF57F20044D7BC /* NSData+SRB64Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+SRB64Additions.h"; sourceTree = "<group>"; };
+		E452D4CA15FF57F20044D7BC /* NSData+SRB64Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+SRB64Additions.m"; sourceTree = "<group>"; };
+		E452D4CE15FF57FB0044D7BC /* SocketIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIO.h; sourceTree = "<group>"; };
+		E452D4CF15FF57FB0044D7BC /* SocketIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIO.m; sourceTree = "<group>"; };
+		E452D4D015FF57FB0044D7BC /* SocketIOJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOJSONSerialization.h; sourceTree = "<group>"; };
+		E452D4D115FF57FB0044D7BC /* SocketIOJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOJSONSerialization.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +93,8 @@
 		E452D4A315FF55D90044D7BC /* ChatClient */ = {
 			isa = PBXGroup;
 			children = (
+				E452D4BB15FF579B0044D7BC /* SocketRocket */,
+				E452D4BA15FF57920044D7BC /* Socket.io */,
 				E452D4AC15FF55D90044D7BC /* CCAppDelegate.h */,
 				E452D4AD15FF55D90044D7BC /* CCAppDelegate.m */,
 				E452D4AF15FF55D90044D7BC /* MainStoryboard.storyboard */,
@@ -96,6 +114,31 @@
 				E452D4AB15FF55D90044D7BC /* ChatClient-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E452D4BA15FF57920044D7BC /* Socket.io */ = {
+			isa = PBXGroup;
+			children = (
+				E452D4CE15FF57FB0044D7BC /* SocketIO.h */,
+				E452D4CF15FF57FB0044D7BC /* SocketIO.m */,
+				E452D4D015FF57FB0044D7BC /* SocketIOJSONSerialization.h */,
+				E452D4D115FF57FB0044D7BC /* SocketIOJSONSerialization.m */,
+			);
+			name = Socket.io;
+			sourceTree = "<group>";
+		};
+		E452D4BB15FF579B0044D7BC /* SocketRocket */ = {
+			isa = PBXGroup;
+			children = (
+				E452D4C415FF57F20044D7BC /* base64.c */,
+				E452D4C515FF57F20044D7BC /* base64.h */,
+				E452D4C615FF57F20044D7BC /* SRWebSocket.h */,
+				E452D4C715FF57F20044D7BC /* SRWebSocket.m */,
+				E452D4C815FF57F20044D7BC /* SocketRocket-Prefix.pch */,
+				E452D4C915FF57F20044D7BC /* NSData+SRB64Additions.h */,
+				E452D4CA15FF57F20044D7BC /* NSData+SRB64Additions.m */,
+			);
+			name = SocketRocket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +208,11 @@
 				E452D4AA15FF55D90044D7BC /* main.m in Sources */,
 				E452D4AE15FF55D90044D7BC /* CCAppDelegate.m in Sources */,
 				E452D4B415FF55D90044D7BC /* CCViewController.m in Sources */,
+				E452D4CB15FF57F20044D7BC /* base64.c in Sources */,
+				E452D4CC15FF57F20044D7BC /* SRWebSocket.m in Sources */,
+				E452D4CD15FF57F20044D7BC /* NSData+SRB64Additions.m in Sources */,
+				E452D4D215FF57FB0044D7BC /* SocketIO.m in Sources */,
+				E452D4D315FF57FB0044D7BC /* SocketIOJSONSerialization.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
