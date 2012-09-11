@@ -13,6 +13,8 @@
 @end
 
 @implementation CCViewController
+@synthesize inputTextField;
+@synthesize resultTextView;
 
 - (void)viewDidLoad
 {
@@ -22,6 +24,8 @@
 
 - (void)viewDidUnload
 {
+    [self setInputTextField:nil];
+    [self setResultTextView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

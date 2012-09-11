@@ -55,6 +55,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="inputTextField" destination="Ld8-S7-vbh" id="wtH-go-I7i"/>
+                        <outlet property="resultTextView" destination="tPS-Rp-PBb" id="mye-mI-mU1"/>
+                    </connections>
                 </viewController>
             </objects>
         </scene>
@@ -62,6 +66,10 @@
     <classes>
         <class className="CCViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CCViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="inputTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="resultTextView" candidateClass="UITextView"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

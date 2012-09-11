@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CCViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *inputTextField;
+@property (weak, nonatomic) IBOutlet UITextView *resultTextView;
 
 @end
