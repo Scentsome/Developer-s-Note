@@ -33,6 +33,9 @@
 }
 
 - (IBAction)sendText:(id)sender {
+    NSDictionary * chat = [NSDictionary dictionaryWithObjectsAndKeys:inputTextField.text,@"message", nil];
+    [socketIO sendEvent:@"sendchat" withData:chat];
+    [inputTextField resignFirstResponder];
 }
 
 - (void)viewDidLoad
@@ -54,6 +57,27 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+-(void) updateResult{
+    resultTextView.text = resultString;
+}
+
+#pragma SocketIO Delegate
+- (void) socketIO:(SocketIO *)socket didReceiveEvent:(SocketIOPacket *)packet{
+//    NSLog(@"did received type %@, name %@, data %@", packet.type, packet.name, packet.data);
+    if ([packet.name isEqualToString:@"chat"]) {
+        NSDictionary * stringData = (NSDictionary *) [NSJSONSerialization JSONObjectWithData:[packet.data dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONWritingPrettyPrinted error:NULL];        
+        NSDictionary * messageData = [[stringData objectForKey:@"args"] objectAtIndex:0];
+        [resultString appendFormat:@"%@ say %@\n", [messageData objectForKey:@"sender"],[messageData objectForKey:@"message" ]] ;
+    }
+    [self updateResult];
+}
+
+- (void) socketIODidConnect:(SocketIO *)socket{
+    NSLog(@"did connect to %@", socket);
+}
+- (void) socketIODidDisconnect:(SocketIO *)socket{
+    NSLog(@"did disconnect to %@", socket);
 }
 
 @end
