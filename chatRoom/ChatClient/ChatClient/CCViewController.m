@@ -27,7 +27,7 @@
 -(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     NSString * inputName = [alertView textFieldAtIndex:0].text;
     
-    [socketIO connectToHost:@"localhost" onPort:8124];
+    [socketIO connectToHost:@"219.85.250.159" onPort:8124];
     NSDictionary * hello = [NSDictionary dictionaryWithObjectsAndKeys:inputName,@"name", nil];
     [socketIO sendEvent:@"addme" withData:hello ];
 }
