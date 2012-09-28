@@ -7,11 +7,43 @@
 //
 
 #import "GLAppDelegate.h"
+#import <objc/objc-runtime.h>
+#import <objc/objc-class.h>
+@interface Shape : NSObject
+
+@end
+
+@implementation Shape
+
+@end
+
+void draw ( id self, SEL _cmd,... )
+{
+    NSLog (@"Drawing color");
+}
+
 
 @implementation GLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    struct objc_method myMethod ;
+    myMethod.method_name = sel_registerName("draw");
+    myMethod.method_imp  = draw;
+    
+    // build the method list.
+    // this memory needs to stick around as long as the
+    // methods belong to the class.
+    
+    struct objc_method_list * myMethodList;
+    myMethodList = malloc (sizeof(struct objc_method_list));
+    myMethodList->method_count = 1;
+    myMethodList->method_list[0] = myMethod;
+    
+    // add method to the class
+    class_addMethods ( [Shape class], myMethodList );
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
