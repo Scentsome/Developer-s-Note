@@ -1,0 +1,16 @@
+//
+// Prefix header for all source files of the 'AuthDemo' target in the 'AuthDemo' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#define AWSServer @"http://54.235.170.49:4000"
+#define LocalServer @"http://192.168.0.12:4000"
+#endif

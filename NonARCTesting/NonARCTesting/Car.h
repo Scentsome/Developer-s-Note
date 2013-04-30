@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface Car : NSObject
-
+-(id) newName;
+-(id) newname;
 @end
