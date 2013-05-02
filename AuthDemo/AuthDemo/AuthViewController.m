@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *accountField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 @property (weak, nonatomic) IBOutlet UITextField *repasswordField;
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 
 @end
 
@@ -61,7 +62,7 @@
 -(void) remoteSignUp{
     NSLog(@"sign up");
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    NSURL *url = [NSURL URLWithString:[LocalServer stringByAppendingString:@"/signup"]];
+    NSURL *url = [NSURL URLWithString:[AWSServer stringByAppendingString:@"/signup"]];
     NSMutableURLRequest * postRequest = [NSMutableURLRequest requestWithURL:url];
     postRequest.HTTPMethod = @"POST";
     NSDictionary * bodyDict = @{@"username": self.accountField.text, @"password": self.passwordField.text};
@@ -72,9 +73,13 @@
         if (error) {
             NSLog(@"%@", error);
         }else{
-            NSHTTPURLResponse * httpResponse = response;
+            NSHTTPURLResponse * httpResponse = (NSHTTPURLResponse *)response;
             NSLog(@"%@", httpResponse.allHeaderFields);
             NSLog(@"%d", httpResponse.statusCode);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.statusLabel.text = [NSString stringWithFormat:@"%d",httpResponse.statusCode];
+            });
+            
         }
         
     }];

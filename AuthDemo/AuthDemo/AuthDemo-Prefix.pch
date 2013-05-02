@@ -11,6 +11,6 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
-#define AWSServer @"http://54.235.170.49:4000"
+#define AWSServer @"http://54.235.170.49"
 #define LocalServer @"http://192.168.0.12:4000"
 #endif

@@ -19,7 +19,7 @@
 
 @implementation ViewController
 -(void) queryLoggedMessage{
-    NSURL * queryURL = [NSURL URLWithString:[LocalServer stringByAppendingFormat:@"/api/posts"]];
+    NSURL * queryURL = [NSURL URLWithString:[AWSServer stringByAppendingFormat:@"/api/posts"]];
     NSURLRequest * request = [NSURLRequest requestWithURL:queryURL];
     AFJSONRequestOperation * operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         NSLog(@"JSON Data %@", JSON);
@@ -72,6 +72,13 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
+- (void)checkAPIKey {
+    if (self.apikey == nil || [self.apikey isEqualToString:@""]) {
+        id loginViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"login"];
+        [self presentViewController:loginViewController animated:YES completion:nil];
+    }
+}
+
 -(void) viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     NSHTTPCookie *cookie;
@@ -91,10 +98,7 @@
         }
     }
 
-    if (self.apikey == nil || [self.apikey isEqualToString:@""]) {
-        id loginViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"login"];
-        [self presentViewController:loginViewController animated:YES completion:nil];
-    }
+    [self checkAPIKey];
 }
 
 - (void)didReceiveMemoryWarning
@@ -124,7 +128,7 @@
     }
 }
 -(void) remoteValidateAccount:(NSString *) vCode{
-    NSURL * url = [NSURL URLWithString:[LocalServer stringByAppendingFormat:@"/validateToken?token=%@", vCode]];
+    NSURL * url = [NSURL URLWithString:[AWSServer stringByAppendingFormat:@"/validateToken?token=%@", vCode]];
     NSURLRequest * request = [NSURLRequest requestWithURL:url];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue new] completionHandler:^(NSURLResponse * response, NSData * data, NSError * error) {
         NSHTTPURLResponse * httpResponse = (NSHTTPURLResponse *) response;
@@ -134,7 +138,7 @@
 }
 
 -(void) postMessage:(NSString *) text{
-    NSURL * postURL = [NSURL URLWithString:[LocalServer stringByAppendingFormat:@"/api/posts"]];
+    NSURL * postURL = [NSURL URLWithString:[AWSServer stringByAppendingFormat:@"/api/posts"]];
     NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:postURL];
     request.HTTPMethod = @"POST";
     request.HTTPBody = [[NSString stringWithFormat:@"text=%@", text] dataUsingEncoding:NSUTF8StringEncoding];
@@ -169,5 +173,18 @@
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     cell.textLabel.text = self.loggedMessages[indexPath.row];
     return cell;
+}
+- (IBAction)logout:(id)sender {
+    NSHTTPCookieStorage *cookieJar = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    for (NSHTTPCookie * cookie in [cookieJar cookies]) {
+        NSLog(@"%@ %@ %@", cookie.name, cookie.value, cookie.expiresDate);
+        
+        if ([cookie.name isEqualToString:@"apikey"]) {
+            [cookieJar deleteCookie:cookie];
+            self.apikey = nil;
+            
+        }
+    }
+    [self checkAPIKey];
 }
 @end

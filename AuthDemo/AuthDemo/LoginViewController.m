@@ -62,7 +62,7 @@
 
 -(void) remoteLogin{
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    NSURL * url = [NSURL URLWithString:[LocalServer stringByAppendingFormat:@"/login?username=%@&password=%@", self.accountField.text, self.passwordField.text]];
+    NSURL * url = [NSURL URLWithString:[AWSServer stringByAppendingFormat:@"/login?username=%@&password=%@", self.accountField.text, self.passwordField.text]];
     
     NSURLRequest * request = [NSURLRequest requestWithURL:url];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue new] completionHandler:^(NSURLResponse * response, NSData * data, NSError * error) {
@@ -137,7 +137,7 @@
     }
 }
 -(void) remoteValidateAccount:(NSString *) vCode{
-    NSURL * url = [NSURL URLWithString:[LocalServer stringByAppendingFormat:@"/validateToken?token=%@", vCode]];
+    NSURL * url = [NSURL URLWithString:[AWSServer stringByAppendingFormat:@"/validateToken?token=%@", vCode]];
     NSURLRequest * request = [NSURLRequest requestWithURL:url];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue new] completionHandler:^(NSURLResponse * response, NSData * data, NSError * error) {
         NSHTTPURLResponse * httpResponse = (NSHTTPURLResponse *) response;
