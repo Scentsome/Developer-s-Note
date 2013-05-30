@@ -60,6 +60,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void) examCookies{
+    NSHTTPCookieStorage *cookieJar = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    for (NSHTTPCookie * cookie in [cookieJar cookies]) {
+        NSLog(@"cookie name %@ value %@  expiration %@", cookie.name, cookie.value, cookie.expiresDate);
+    }
+}
+
 -(void) remoteLogin{
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     NSURL * url = [NSURL URLWithString:[AWSServer stringByAppendingFormat:@"/login?username=%@&password=%@", self.accountField.text, self.passwordField.text]];
@@ -78,6 +85,8 @@
                 switch (statusCode) {
                     case 200:{
                         self.statusLabel.text = @"Successfully Logged in";
+                        [self examCookies];
+                        [self dismissViewControllerAnimated:YES completion:nil];
                         break;
                     }
                     case 403:{

@@ -85,7 +85,7 @@
     
     NSHTTPCookieStorage *cookieJar = [NSHTTPCookieStorage sharedHTTPCookieStorage];
     for (cookie in [cookieJar cookies]) {
-        NSLog(@"%@ %@ %@", cookie.name, cookie.value, cookie.expiresDate);
+        NSLog(@"cookie name %@ value %@  expiration %@", cookie.name, cookie.value, cookie.expiresDate);
         
         if ([cookie.name isEqualToString:@"apikey"]) {
             if ([cookie.expiresDate timeIntervalSinceDate:[NSDate date]] <0 ) {
@@ -145,6 +145,8 @@
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue new] completionHandler:^(NSURLResponse * response, NSData * data, NSError * error) {
         if (!error) {
             NSLog(@"%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+            [self updateListData:nil];
+            self.inputField.text = @"";
         }
     }];
 }
