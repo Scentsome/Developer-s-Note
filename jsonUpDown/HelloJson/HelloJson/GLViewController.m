@@ -43,7 +43,7 @@
 }
 - (IBAction)sendJson:(id)sender {
     self.upData = [NSMutableData data];
-    NSURL * jsonURL = [NSURL URLWithString:APPFOG];
+    NSURL * jsonURL = [NSURL URLWithString:Server];
     NSMutableURLRequest * mRequest = [NSMutableURLRequest requestWithURL:jsonURL];
     mRequest.HTTPMethod = @"POST";
     [mRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
@@ -56,7 +56,7 @@
 }
 - (IBAction)getJson:(id)sender {
     self.downData = [NSMutableData  data];
-    NSURL  * jsonURL = [NSURL URLWithString:[APPFOG stringByAppendingFormat:@"?data=%@",@"hello"]];
+    NSURL  * jsonURL = [NSURL URLWithString:[Server stringByAppendingFormat:@"?data=%@",@"hello"]];
     NSURLRequest * request = [NSURLRequest requestWithURL:jsonURL];
     getConnection = [NSURLConnection connectionWithRequest:request delegate:self];
 }

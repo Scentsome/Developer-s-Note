@@ -236,7 +236,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wNw-yo-gwd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="9J2-yg-FQF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="173" y="24"/>
+            <point key="canvasLocation" x="20" y="95"/>
         </scene>
         <!--Auth View Controller-->
         <scene sceneID="Ha0-0O-jCT">
@@ -371,6 +371,7 @@
                 <relationship kind="outlet" name="editingScrollView" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="repasswordField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="statusLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="LoginViewController" superclassName="UIViewController">
