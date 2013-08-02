@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efF-CQ-Apa" customClass="CardView">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="9GA-4f-KkR"/>
+                                    <constraint firstAttribute="width" constant="72" id="dDB-Ae-8D8"/>
+                                </constraints>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FyU-gp-b3b" customClass="CardView">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="y6b-LO-DE0"/>
+                                </constraints>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ig-cr-uye" customClass="CardView">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="bgL-7M-0W6"/>
+                                </constraints>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HDA-aR-cBk" customClass="CardView">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="yal-yJ-LM7"/>
+                                </constraints>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iAA-G6-x7c" customClass="CardView"/>
+                            <imageView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wkg-Md-xWH" customClass="CardView"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbD-4f-vbr">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Change">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeImages:" destination="2" eventType="touchUpInside" id="gvp-k3-IpI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X60-TI-eYC">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="mXX-6g-4Bx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="unlock all">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="unlockAll:" destination="2" eventType="touchUpInside" id="blb-rK-HSa"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ndw-qU-Roh">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="212" id="deK-ht-Aff"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="1"/>
+                                    <segment title="2"/>
+                                    <segment title="3"/>
+                                    <segment title="4"/>
+                                    <segment title="5"/>
+                                </segments>
+                                <connections>
+                                    <action selector="lockSome:" destination="2" eventType="valueChanged" id="F99-TG-O2w"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="efF-CQ-Apa" firstAttribute="top" secondItem="3" secondAttribute="top" constant="29" id="0Bc-5W-2Ic"/>
+                            <constraint firstItem="HDA-aR-cBk" firstAttribute="trailing" secondItem="iAA-G6-x7c" secondAttribute="trailing" type="default" id="0d0-sk-gkF"/>
+                            <constraint firstItem="iAA-G6-x7c" firstAttribute="top" secondItem="FyU-gp-b3b" secondAttribute="top" type="default" id="4WL-KU-4Nm"/>
+                            <constraint firstItem="HDA-aR-cBk" firstAttribute="bottom" secondItem="efF-CQ-Apa" secondAttribute="bottom" type="default" id="598-07-I3d"/>
+                            <constraint firstAttribute="bottom" secondItem="X60-TI-eYC" secondAttribute="bottom" constant="5" id="9oz-hr-PeC"/>
+                            <constraint firstAttribute="trailing" secondItem="HDA-aR-cBk" secondAttribute="trailing" constant="33" id="A3d-yW-1xr"/>
+                            <constraint firstItem="FyU-gp-b3b" firstAttribute="leading" secondItem="efF-CQ-Apa" secondAttribute="leading" type="default" id="Gnc-Xj-MVW"/>
+                            <constraint firstItem="X60-TI-eYC" firstAttribute="top" secondItem="ndw-qU-Roh" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="L0T-0K-UeP"/>
+                            <constraint firstItem="iAA-G6-x7c" firstAttribute="leading" secondItem="HDA-aR-cBk" secondAttribute="leading" type="default" id="O5l-Nk-5aa"/>
+                            <constraint firstItem="wkg-Md-xWH" firstAttribute="top" secondItem="0ig-cr-uye" secondAttribute="top" type="default" id="TAz-LH-Sua"/>
+                            <constraint firstItem="HDA-aR-cBk" firstAttribute="top" secondItem="efF-CQ-Apa" secondAttribute="top" type="default" id="V17-Et-XXy"/>
+                            <constraint firstItem="iAA-G6-x7c" firstAttribute="trailing" secondItem="wkg-Md-xWH" secondAttribute="trailing" type="default" id="VFN-7q-C1P"/>
+                            <constraint firstAttribute="bottom" secondItem="0ig-cr-uye" secondAttribute="bottom" constant="100" id="aR7-Kq-hKD"/>
+                            <constraint firstItem="wkg-Md-xWH" firstAttribute="leading" secondItem="iAA-G6-x7c" secondAttribute="leading" type="default" id="aZG-cU-79B"/>
+                            <constraint firstItem="X60-TI-eYC" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="cLV-ow-JKu"/>
+                            <constraint firstItem="FyU-gp-b3b" firstAttribute="top" secondItem="3" secondAttribute="top" constant="149" id="cp9-xf-zHL"/>
+                            <constraint firstItem="FyU-gp-b3b" firstAttribute="trailing" secondItem="efF-CQ-Apa" secondAttribute="trailing" type="default" id="dms-mt-bJA"/>
+                            <constraint firstItem="KbD-4f-vbr" firstAttribute="top" secondItem="3" secondAttribute="top" constant="175" id="eSE-jH-fHr"/>
+                            <constraint firstItem="iAA-G6-x7c" firstAttribute="bottom" secondItem="FyU-gp-b3b" secondAttribute="bottom" type="default" id="p2O-Og-dak"/>
+                            <constraint firstItem="X60-TI-eYC" firstAttribute="centerX" secondItem="ndw-qU-Roh" secondAttribute="centerX" type="default" id="puG-Vl-ox6"/>
+                            <constraint firstItem="KbD-4f-vbr" firstAttribute="centerX" secondItem="ndw-qU-Roh" secondAttribute="centerX" type="default" id="rYu-M5-lHu"/>
+                            <constraint firstItem="efF-CQ-Apa" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="42" id="sFv-By-4Bc"/>
+                            <constraint firstItem="wkg-Md-xWH" firstAttribute="bottom" secondItem="0ig-cr-uye" secondAttribute="bottom" type="default" id="sWH-mr-aaZ"/>
+                            <constraint firstItem="0ig-cr-uye" firstAttribute="leading" secondItem="FyU-gp-b3b" secondAttribute="leading" type="default" id="tXp-FC-1Pv"/>
+                            <constraint firstItem="0ig-cr-uye" firstAttribute="trailing" secondItem="FyU-gp-b3b" secondAttribute="trailing" type="default" id="xes-nG-xsh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outletCollection property="cards" destination="efF-CQ-Apa" id="dbV-Jq-H1l"/>
+                        <outletCollection property="cards" destination="HDA-aR-cBk" id="PKz-7X-Fgt"/>
+                        <outletCollection property="cards" destination="FyU-gp-b3b" id="o4a-Ke-rVk"/>
+                        <outletCollection property="cards" destination="iAA-G6-x7c" id="fGq-ka-uYY"/>
+                        <outletCollection property="cards" destination="0ig-cr-uye" id="dU8-96-9Tf"/>
+                        <outletCollection property="cards" destination="wkg-Md-xWH" id="H12-PN-CBA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-658" y="115"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="CardView" superclassName="UIImageView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CardView.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="changeImages:"/>
+                <relationship kind="action" name="lockSome:" candidateClass="UISegmentedControl"/>
+                <relationship kind="action" name="unlockAll:"/>
+                <relationship kind="outletCollection" name="cards" candidateClass="CardView"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
